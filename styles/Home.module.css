@@ -4,11 +4,10 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -28,7 +27,8 @@
   flex-grow: 1;
 }
 
-.title a {
+.title a,
+.title span {
   color: #0070f3;
   text-decoration: none;
 }
@@ -65,11 +65,22 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+.grid,
+.gridlinks {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.jobslist {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  max-height: 600px;
+  align-items: center;
   max-width: 800px;
 }
 
@@ -82,7 +93,8 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  min-width: 350px;
+  width: 94%;
 }
 
 .card:hover,
@@ -93,14 +105,35 @@
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
+}
+
+.jobslist .card h2 {
+  font-size: 1.25rem;
+}
+
+.gridlinks .card {
+  margin: 0.75rem;
+  padding: 1rem 1.5rem;
+  min-width: auto;
+  width: auto;
+}
+
+.gridlinks .card .label {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
+}
+
+.card .company {
+  color: #0070f3;
+  font-size: 1rem;
 }
 
 .logo {
@@ -116,14 +149,30 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
+}
+
+.closebutton {
+  padding: 0.25rem 1rem 0.5rem 1rem;
+  margin: 1rem;
+  line-height: initial;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.closebutton:hover {
+  background-color: #222;
 }
